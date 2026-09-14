@@ -1,9 +1,12 @@
 const {Router} = require("express")
 const userRouter = Router()
 const jwt = require("jsonwebtoken")
-const dotenv = require("dotenv")
-dotenv.config()
+// const dotenv = require("dotenv")
+// dotenv.config()
 const {userModel} = require("../db.js")
+
+const JWT_SECRET="wajihaider"
+
 
 userRouter.post("/signup" , async (req,res)=>{
     const username = req.body.username
@@ -53,7 +56,7 @@ userRouter.post("/signin" , async (req,res)=>{
                     msg : "incorrect password"
                 })
             }
-            const token = jwt.sign({id : user._id} , process.env.JWT_SECRET)
+            const token = jwt.sign({id : user._id} ,JWT_SECRET)
             return res.json({
                 token : token
             })
@@ -66,4 +69,6 @@ userRouter.post("/signin" , async (req,res)=>{
     }
 })
 
-module.exports = userRouter
+module.exports = {
+    userRouter : userRouter
+}
