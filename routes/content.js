@@ -3,7 +3,7 @@ const contentRouter = Router()
 const jwt = require("jsonwebtoken")
 
 const {contentModel} = require("../db")
-const { userRouter } = require("./user")
+// const { userRouter } = require("./user")
 const JWT_SECRET="wajihaider"
 
 
@@ -32,6 +32,26 @@ contentRouter.post("/add" , async(req,res)=>{
         msg : "content added"
     })
 
+
+})
+contentRouter.get("/display" , async(req,res)=>{
+    const verified = jwt.verify(req.body.token , JWT_SECRET)
+    let userId;
+    if(verified){
+        userId = verified.id;
+    }else{
+        return res.status(403).json({
+            msg : "unauthorized user"
+        })
+    }
+    const data = await contentModel.find({
+        userId : userId
+    })
+    res.json({
+        title:data.title,
+        link : data.link,
+        tag: data.tag
+    })
 
 })
 module.exports = {contentRouter}
