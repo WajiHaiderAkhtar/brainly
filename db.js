@@ -20,7 +20,7 @@ const contentSchema = new Schema({
     title : String,
     link : String,
     tags : String,  //[{type : mongoose.Types.ObjectId , ref : 'tags'}]
-    userId : {type : mongoose.Types.ObjectId , ref : 'User' , required : true }
+    userId : {type : mongoose.Types.ObjectId , ref : 'user' , required : true }
 })
 
 const userModel = mongoose.model('user' , userSchema);

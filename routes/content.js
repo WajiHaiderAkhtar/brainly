@@ -46,9 +46,10 @@ contentRouter.get("/view" , async(req,res)=>{
     }
     const data = await contentModel.find({userId : userId}).populate("userId" , "username")//populate("which user" , "what informations u want for eg "username password". in default all fields will come")
     res.json({
-        title:data.title,
-        link : data.link,
-        tag : data.tags
+        // title:data.title,
+        // link : data.link,
+        // tag : data.tags
+        data : data
     })
 
 })
