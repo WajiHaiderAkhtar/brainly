@@ -1,5 +1,10 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+try{
+    mongoose.connect("mongo_URI = mongodb+srv://wajilaphaider786:GuLwwDFRtgQbRjxC@cluster0.aqkuemk.mongodb.net/brainly")
+}catch(err){
+    console.log("db connection error")
+}
 
 const userSchema = new Schema({
     username : {
