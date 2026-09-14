@@ -12,19 +12,21 @@ const userSchema = new Schema({
     email : {type : String , unique : true},
 })
 
-// const contentSchema = new Schema({
-//     type : {
-//         type : String,
-//         enum : ["document","tweet","youtube","link"]
-//     },
-//     title : String,
-//     link : String,
-//     tags : Array,
-//     userId : Object
-// })
+const contentSchema = new Schema({
+    // type : {
+    //     type : String,
+    //     enum : ["document","tweet","youtube","link"]
+    // },
+    title : String,
+    link : String,
+    tags : String,  //[{type : mongoose.Types.ObjectId , ref : 'tags'}]
+    userId : {type : mongoose.Types.ObjectId , ref : 'User' , required : true }
+})
 
 const userModel = mongoose.model('user' , userSchema);
+const contentModel = mongoose.model('content',contentSchema);
 
 module.exports={
-    userModel
+    userModel,
+    contentModel
 }

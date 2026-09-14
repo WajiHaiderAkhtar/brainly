@@ -69,6 +69,4 @@ userRouter.post("/signin" , async (req,res)=>{
     }
 })
 
-module.exports = {
-    userRouter : userRouter
-}
+module.exports = {userRouter}
