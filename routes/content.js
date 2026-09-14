@@ -34,7 +34,7 @@ contentRouter.post("/add" , async(req,res)=>{
 
 
 })
-contentRouter.get("/display" , async(req,res)=>{
+contentRouter.get("/view" , async(req,res)=>{
     const verified = jwt.verify(req.body.token , JWT_SECRET)
     let userId;
     if(verified){
@@ -44,14 +44,15 @@ contentRouter.get("/display" , async(req,res)=>{
             msg : "unauthorized user"
         })
     }
-    const data = await contentModel.find({
-        userId : userId
-    })
+    const data = await contentModel.find({userId : userId}).populate("userId" , "username")//populate("which user" , "what informations u want for eg "username password". in default all fields will come")
     res.json({
         title:data.title,
         link : data.link,
-        tag: data.tag
+        tag : data.tags
     })
+
+})
+contentRouter.put("/delete" , async(req,res)=>{
 
 })
 module.exports = {contentRouter}
