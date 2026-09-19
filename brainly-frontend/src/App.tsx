@@ -1,5 +1,6 @@
 import './App.css'
 import {Button} from "./components/Button.tsx"
+import { Card } from './components/Card.tsx'
 import { AddIcon } from './icons/AddIcon.tsx'
 import {ShareIcon} from "./icons/ShareIcon.tsx"
 
@@ -8,7 +9,7 @@ function App() {
     <>
       <Button text = {"Share Brain"} variant={"secondary"} startIcon={<ShareIcon size = {"md"} />} ></Button>
       <Button text = {"Add Content"} variant={"primary"} startIcon={<AddIcon size = {"md"} />} ></Button>
-
+      <Card type = "youtube" title="Youtube Edit" link = "https://youtu.be/lLXsJB6m5TY?si=6xpWuaopMYIePglL" />
 
 
 
