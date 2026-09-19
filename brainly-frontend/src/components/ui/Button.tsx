@@ -14,7 +14,9 @@ const defaultStyle = "px-4 py-2 rounded-md font-light flex items-center"
 
 export function Button({variant , text , startIcon} : ButtonInterface){
     return <button className={variantClass[variant] + " " + defaultStyle}>
-        {startIcon}
+        <div className="pr-2">
+            {startIcon}
+        </div>
         {text}
     </button>
 }
