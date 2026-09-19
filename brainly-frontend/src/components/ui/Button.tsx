@@ -1,9 +1,13 @@
 // To understand lets make button comp in jsx 
 
+import type { ReactElement } from "react"
+
 // now to define how the basic structure of button will look like we will define interface just like we do in function sum(a:number , b:number){}
 interface ButtonInterface{
-    title : string , 
-    size : "lg" | "md" | "sm"
+    title : string,  // now in one button there can be string or an icon svg or say Element(react element). But doing this wont utilize full pow of typescript , so to write this in enhanced way we will accept only string as title and introduce new props start elment and end elem.
+    size : "lg" | "md" | "sm",
+    startIcon? : ReactElement, // here ? means its optional we can give and can not it wont show error
+    endIcon? : ReactElement
 }
 
 // now for size field there are multiple choice so for each choice we have to define an if condition so to remove that we will make an object containing values and we will access then by sizeStyle[props.size]
@@ -15,6 +19,8 @@ const sizeStyles = {
 
 export function Button (props : ButtonInterface){
     return <button className={sizeStyles[props.size]}>
+        {props.startIcon}
         {props.title}
+        {props.endIcon}
     </button>
 }
