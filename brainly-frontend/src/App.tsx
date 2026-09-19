@@ -6,9 +6,9 @@ import {ShareIcon} from "./icons/ShareIcon.tsx"
 function App() {
   return (
     <>
-      <Button text = {"Share"} variant={"primary"} startIcon={<ShareIcon size = {"md"} />} ></Button>
+      <Button text = {"Share Brain"} variant={"secondary"} startIcon={<ShareIcon size = {"md"} />} ></Button>
 
-      <Button text = {"Add Content"} variant={"secondary"} startIcon={<AddIcon size = {"md"} />} ></Button>
+      <Button text = {"Add Content"} variant={"primary"} startIcon={<AddIcon size = {"md"} />} ></Button>
 
 
 
