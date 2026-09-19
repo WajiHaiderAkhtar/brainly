@@ -7,7 +7,6 @@ function App() {
   return (
     <>
       <Button text = {"Share Brain"} variant={"secondary"} startIcon={<ShareIcon size = {"md"} />} ></Button>
-
       <Button text = {"Add Content"} variant={"primary"} startIcon={<AddIcon size = {"md"} />} ></Button>
 
 
