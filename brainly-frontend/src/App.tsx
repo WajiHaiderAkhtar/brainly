@@ -1,5 +1,5 @@
 import './App.css'
-import {Button} from "./components/ui/Button.tsx"
+import {Button} from "./components/Button.tsx"
 import { AddIcon } from './icons/AddIcon.tsx'
 import {ShareIcon} from "./icons/ShareIcon.tsx"
 
