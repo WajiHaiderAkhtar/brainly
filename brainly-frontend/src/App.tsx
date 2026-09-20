@@ -9,8 +9,10 @@ function App() {
     <>
       <Button text = {"Share Brain"} variant={"secondary"} startIcon={<ShareIcon size = {"md"} />} ></Button>
       <Button text = {"Add Content"} variant={"primary"} startIcon={<AddIcon size = {"md"} />} ></Button>
-      <Card type = "youtube" title="Youtube Edit" link = "https://youtu.be/lLXsJB6m5TY?si=6xpWuaopMYIePglL" />
-
+      <div className="flex">
+      <Card type = "youtube" title="Erwin AMV" link = "https://youtu.be/lLXsJB6m5TY?si=6xpWuaopMYIePglL" />
+      <Card type = "twitter" title="First Tweet" link = "https://x.com/kirat_tw/status/1633685473821425666" />
+      </div>
 
 
 
